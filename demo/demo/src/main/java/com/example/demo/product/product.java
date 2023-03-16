@@ -1,7 +1,8 @@
 package com.example.demo.product;
-
+import com.example.demo.model.Category;
 import org.springframework.data.annotation.Id;
 
+@EnableJpaRepositories
 @Entity
 @Table(name = "product")
 public class Product {

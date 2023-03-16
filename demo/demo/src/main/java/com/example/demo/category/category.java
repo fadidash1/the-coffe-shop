@@ -1,6 +1,13 @@
-@Entity
+import javax.persistence.*;
+import com.example.demo.model.Admin;
+import com.example.demo.model.Client;
+import com.example.demo.model.Product;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+
+@EntityScan
 @Table(name = "category")
-public class Category {
+public class Category{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -62,7 +69,5 @@ public class Category {
     public void setProduct(Product product) {
         this.product = product;
     }
-
-    // getters and setters
 }
 

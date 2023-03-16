@@ -1,14 +1,14 @@
 package com.example.demo.admin;
-import org.apache.logging.log4j.message.AsynchronouslyFormattable;
+import org.springframework.aot.generate.GeneratedTypeReference;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 
-@EntityScan
-@AsynchronouslyFormattable(name = "admin")
+@Entity
+@table(name = "admin")
 public class Admin {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GeneratedTypeReference.IDENTITY)
     private Long id;
 
     @Column(name = "fname")
