@@ -1,21 +1,19 @@
-package com.example.demo.admin;
-import org.springframework.aot.generate.GeneratedTypeReference;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+package com.example.demo.entity;
+import org.springframework.boot.autoconfigure.client.EntityScan;
 import org.springframework.data.annotation.Id;
 
 @Entity
-@table(name = "admin")
-public class Admin {
+@Table(name = "client")
+public class Client {
 
     @Id
-    @GeneratedValue(strategy = GeneratedTypeReference.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "fname")
     private String firstName;
 
-    @Columns(name = "lname")
-
+    @Column(name = "lname")
     private String lastName;
 
     @Column(name = "email")
@@ -23,6 +21,8 @@ public class Admin {
 
     @Column(name = "password")
     private String password;
+
+    // constructors
 
     public Long getId() {
         return id;
@@ -64,18 +64,20 @@ public class Admin {
         this.password = password;
     }
 
-    Admin admin = new Admin();
-admin.setId(1L);
-admin.setFirstName("John");
-admin.setLastName("Doe");
-admin.setEmail("john.doe@example.com");
-admin.setPassword("secret");
-
-    Long adminId = admin.getId();
-    String adminFirstName = admin.getFirstName();
-    String adminLastName = admin.getLastName();
-    String adminEmail = admin.getEmail();
-    String adminPassword = admin.getPassword();
+    // getters and setters
 }
 
+
+Client client = new Client();
+client.setId(1L);
+client.setFirstName("Alex");
+client.setLastName("Done");
+client.setEmail("alex.done@example.com");
+client.setPassword("secret");
+
+Long clientId = client.getId();
+String clientFirstName = client.getFirstName();
+String clientLastName = client.getLastName();
+String clientEmail = client.getEmail();
+String clientPassword = client.getPassword();
 

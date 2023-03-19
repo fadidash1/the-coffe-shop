@@ -1,6 +1,8 @@
-package com.example.demo.product;
+package com.example.demo.entity;
 import com.example.demo.model.Category;
 import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
 
 @EnableJpaRepositories
 @Entity
