@@ -1,6 +1,8 @@
 package com.example.demo.entity;
-import org.springframework.boot.autoconfigure.client.EntityScan;
+
 import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "client")
@@ -67,17 +69,4 @@ public class Client {
     // getters and setters
 }
 
-
-Client client = new Client();
-client.setId(1L);
-client.setFirstName("Alex");
-client.setLastName("Done");
-client.setEmail("alex.done@example.com");
-client.setPassword("secret");
-
-Long clientId = client.getId();
-String clientFirstName = client.getFirstName();
-String clientLastName = client.getLastName();
-String clientEmail = client.getEmail();
-String clientPassword = client.getPassword();
 

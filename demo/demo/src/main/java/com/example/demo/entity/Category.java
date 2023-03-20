@@ -1,12 +1,10 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
-
-
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 
-@EntityScan
+@Entity
 @Table(name = "category")
 public class Category{
 
