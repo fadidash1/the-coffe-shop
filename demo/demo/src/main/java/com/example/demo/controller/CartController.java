@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.Cart;
 import com.example.demo.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,8 @@ public class CartController {
     private CartRepository cartRepository;
 
     @GetMapping("/")
-    public List<CartRepository> getAllCarts() {
+    public List<Cart> getAllCarts()
+    {
         return cartRepository.findAll();
     }
 

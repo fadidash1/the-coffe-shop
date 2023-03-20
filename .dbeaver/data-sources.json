@@ -1,4 +1,32 @@
 {
 	"folders": {},
-	"connections": {}
+	"connections": {
+		"mysql8-186ff2461e3-146557e59a2a6854": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "coffee",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "coffee",
+				"url": "jdbc:mysql://localhost:3306/coffee",
+				"configurationType": "MANUAL",
+				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
 }
