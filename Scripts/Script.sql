@@ -24,7 +24,7 @@ CREATE TABLE category (
   productid INT NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY (name),
-  FOREIGN KEY (productid) REFERENCES product(id)
+  FOREIGN KEY (idproduct) REFERENCES product(id)
 );
 
 CREATE TABLE product (
@@ -34,7 +34,7 @@ CREATE TABLE product (
   price DECIMAL(10, 2) NOT NULL,
   categoryid INT,
   PRIMARY KEY (id),
-  FOREIGN KEY (categoryid) REFERENCES category(id)
+  FOREIGN KEY (idcategory) REFERENCES category(id)
 );
 CREATE TABLE cart (
   id INT NOT NULL AUTO_INCREMENT,
