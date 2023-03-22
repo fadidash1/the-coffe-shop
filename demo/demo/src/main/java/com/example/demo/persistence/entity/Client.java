@@ -1,21 +1,21 @@
-package com.example.demo.entity;
+package com.example.demo.persistence.entity;
+
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 
 @Entity
-@Table (name = "admin")
-public class Admin {
+@Table(name = "client")
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "fname")
+    @Column(name = "fname")
     private String firstName;
 
     @Column(name = "lname")
-
     private String lastName;
 
     @Column(name = "email")
@@ -23,6 +23,8 @@ public class Admin {
 
     @Column(name = "password")
     private String password;
+
+    // constructors
 
     public Long getId() {
         return id;
@@ -64,4 +66,7 @@ public class Admin {
         this.password = password;
     }
 
+    // getters and setters
 }
+
+

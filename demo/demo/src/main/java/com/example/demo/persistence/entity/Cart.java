@@ -1,7 +1,4 @@
-package com.example.demo.entity;
-
-import com.example.demo.entity.Client;
-import com.example.demo.entity.Product;
+package com.example.demo.persistence.entity;
 
 import javax.persistence.*;
 

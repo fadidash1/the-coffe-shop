@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.persistence.controller;
 
-import com.example.demo.entity.Cart;
-import com.example.demo.repository.CartRepository;
+import com.example.demo.persistence.entity.Cart;
+import com.example.demo.persistence.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

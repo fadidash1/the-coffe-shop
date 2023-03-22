@@ -1,4 +1,7 @@
-import com.example.demo.entity.Client;
+package com.example.demo.persistence.controller;
+
+import com.example.demo.persistence.entity.Client;
+import com.example.demo.persistence.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
