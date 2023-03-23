@@ -1,11 +1,10 @@
 package com.example.demo.persistence.entity;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.*;
 
-@EnableJpaRepositories
+
 @Entity
 @Table(name = "product")
 public class Product {
