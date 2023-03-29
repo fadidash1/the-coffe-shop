@@ -35,9 +35,9 @@ CREATE TABLE product (
 
 CREATE TABLE cart (
   id INT NOT NULL AUTO_INCREMENT,
-  idclient INT NOT NULL,
+  iduser INT NOT NULL,
   idproduct INT NOT NULL,
   PRIMARY KEY (id),
-  FOREIGN KEY (idclient) REFERENCES client(id),
+  FOREIGN KEY (iduser) REFERENCES user(id),
   FOREIGN KEY (idproduct) REFERENCES product(id)
 );

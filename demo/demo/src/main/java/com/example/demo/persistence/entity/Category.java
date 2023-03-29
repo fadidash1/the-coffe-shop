@@ -2,31 +2,27 @@ package com.example.demo.persistence.entity;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "category")
-public class Category{
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_id")
-    private Client client;
+    @Column(name = "productid", nullable = false)
+    private Long productId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "admin_id")
-    private Admin admin;
+    public Category() {
+    }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-    // constructors
+    public Category(String name, Long productId) {
+        this.name = name;
+        this.productId = productId;
+    }
 
     public Long getId() {
         return id;
@@ -44,28 +40,11 @@ public class Category{
         this.name = name;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 }
-

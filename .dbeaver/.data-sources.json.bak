@@ -25,6 +25,14 @@
 					"erd.diagram.state": {
 						"serialized": "\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202303201634\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-186ff2461e3-146557e59a2a6854\"\u003e\u003centity id\u003d\"1\" name\u003d\"admin\" fq-name\u003d\"coffee.admin\" order\u003d\"0\" x\u003d\"30\" y\u003d\"268\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"client\" fq-name\u003d\"coffee.client\" order\u003d\"1\" x\u003d\"456\" y\u003d\"297\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"category\" fq-name\u003d\"coffee.category\" order\u003d\"2\" x\u003d\"37\" y\u003d\"33\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"4\" name\u003d\"product\" fq-name\u003d\"coffee.product\" order\u003d\"3\" x\u003d\"451\" y\u003d\"53\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"5\" name\u003d\"cart\" fq-name\u003d\"coffee.cart\" order\u003d\"4\" x\u003d\"32\" y\u003d\"163\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"NewTable_FK\" fq-name\u003d\"coffee.cart.NewTable_FK\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"5\"/\u003e\u003crelation name\u003d\"product_FK\" fq-name\u003d\"coffee.product.product_FK\" type\u003d\"fk\" pk-ref\u003d\"3\" fk-ref\u003d\"4\"/\u003e\u003crelation name\u003d\"category_FK\" fq-name\u003d\"coffee.category.category_FK\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"NewTable_FK_1\" fq-name\u003d\"coffee.cart.NewTable_FK_1\" type\u003d\"fk\" pk-ref\u003d\"4\" fk-ref\u003d\"5\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"
 					}
+				},
+				":cart": {
+					"properties": {
+						"erd.diagram.state": {
+							"serialized": "\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202303271641\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"mysql8-186ff2461e3-146557e59a2a6854\"\u003e\u003centity id\u003d\"1\" name\u003d\"cart\" fq-name\u003d\"coffee.cart\" order\u003d\"0\" color-bg\u003d\"128,64,32\" x\u003d\"20\" y\u003d\"106\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"2\" name\u003d\"product\" fq-name\u003d\"coffee.product\" order\u003d\"1\" x\u003d\"179\" y\u003d\"20\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003centity id\u003d\"3\" name\u003d\"user_type\" fq-name\u003d\"coffee.user_type\" order\u003d\"2\" x\u003d\"200\" y\u003d\"306\"\u003e\u003cpath name\u003d\"coffee\"/\u003e\u003c/entity\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations/\u003e\u003c/diagram\u003e"
+						}
+					},
+					"constraints": {}
 				}
 			}
 		}

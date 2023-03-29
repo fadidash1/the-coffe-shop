@@ -1,9 +1,7 @@
 package com.example.demo.persistence.entity;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
-
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "product")
@@ -13,20 +11,27 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "price")
-    private double price;
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @ManyToOne
+    @JoinColumn(name = "categoryid")
     private Category category;
 
-    // constructors
+    public Product() {}
+
+    public Product(String name, String description, BigDecimal price, Category category) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.category = category;
+    }
 
     public Long getId() {
         return id;
@@ -52,11 +57,11 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -68,5 +73,9 @@ public class Product {
         this.category = category;
     }
 
-    // getters and setters
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
+                + ", category=" + category + "]";
+    }
 }
