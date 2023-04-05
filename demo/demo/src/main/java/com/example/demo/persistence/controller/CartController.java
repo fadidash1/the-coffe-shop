@@ -16,12 +16,6 @@ public class CartController {
     @Autowired
     private CartRepository cartRepository;
 
-    @GetMapping("")
-    public ResponseEntity<List<Cart>> getAllCarts() {
-        List<Cart> carts = cartRepository.findAll();
-        return ResponseEntity.ok(carts);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Cart> getCartById(@PathVariable("id") Integer id) {
         Optional<Cart> cart = cartRepository.findById(id);

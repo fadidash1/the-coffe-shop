@@ -32,7 +32,7 @@ public class UserTypeController {
 
     @GetMapping
     public List<UserType> getAllUserTypes() {
-        return userTypeRepository.findAll();
+        return (List<UserType>) userTypeRepository.findAll();
     }
 
     @DeleteMapping("/{id}")

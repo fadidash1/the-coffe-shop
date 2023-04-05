@@ -1,8 +1,11 @@
 package com.example.demo.persistence.repository;
 
 import com.example.demo.persistence.entity.Category;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface CategoryRepository extends JpaRepository<Category, Long> {
+import java.util.List;
+
+public interface CategoryRepository extends CrudRepository<Category, Long> {
+    List<Category> findAllCategories();
 
 }

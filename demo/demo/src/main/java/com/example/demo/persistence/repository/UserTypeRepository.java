@@ -1,8 +1,12 @@
 package com.example.demo.persistence.repository;
 
+import com.example.demo.persistence.entity.User;
 import com.example.demo.persistence.entity.UserType;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface UserTypeRepository extends JpaRepository<UserType, Long> {
+import java.util.List;
+
+public interface UserTypeRepository extends CrudRepository<UserType, Long> {
+ List<UserType> findAll();
 
 }
