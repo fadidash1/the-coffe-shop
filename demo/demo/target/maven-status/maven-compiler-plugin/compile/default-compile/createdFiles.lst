@@ -1,0 +1,17 @@
+com\example\demo\persistence\controller\CartController.class
+com\example\demo\DemoApplication.class
+com\example\demo\persistence\repository\UserRepository.class
+com\example\demo\persistence\controller\ProductController.class
+com\example\demo\persistence\repository\UserTypeRepository.class
+com\example\demo\Configuration\DatabaseConfig.class
+com\example\demo\persistence\controller\UserTypeController.class
+com\example\demo\persistence\entity\User.class
+com\example\demo\persistence\repository\ProductRepository.class
+com\example\demo\persistence\entity\Product.class
+com\example\demo\persistence\repository\CartRepository.class
+com\example\demo\persistence\controller\UserController.class
+com\example\demo\persistence\entity\Cart.class
+com\example\demo\persistence\entity\Category.class
+com\example\demo\persistence\entity\UserType.class
+com\example\demo\persistence\repository\CategoryRepository.class
+com\example\demo\persistence\controller\CategoryController.class
