@@ -18,7 +18,7 @@ CREATE TABLE user_type (
 CREATE TABLE category (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL,
-  productid INT NOT NULL,
+  idproduct INT NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY (name)
 );
