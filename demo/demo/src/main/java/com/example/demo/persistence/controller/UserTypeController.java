@@ -1,10 +1,7 @@
 package com.example.demo.persistence.controller;
-
 import com.example.demo.persistence.entity.UserType;
 import com.example.demo.persistence.repository.UserTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,27 +14,29 @@ public class UserTypeController {
     @Autowired
     private UserTypeRepository userTypeRepository;
 
-    @PostMapping
-    public ResponseEntity<UserType> createUserType(@RequestBody UserType userType) {
-        UserType savedUserType = userTypeRepository.save(userType);
-        return new ResponseEntity<>(savedUserType, HttpStatus.CREATED);
+    @GetMapping("/")
+    public List<UserType> getAllUserTypes() {
+        return userTypeRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserType> getUserTypeById(@PathVariable Long id) {
-        Optional<UserType> userType = userTypeRepository.findById(id);
-        return userType.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public Optional<UserType> getUserTypeById(@PathVariable int id) {
+        return userTypeRepository.findById((long) id);
     }
 
-    @GetMapping
-    public List<UserType> getAllUserTypes() {
-        return (List<UserType>) userTypeRepository.findAll();
+    @PostMapping("/")
+    public UserType createUserType(@RequestBody UserType userType) {
+        return userTypeRepository.save(userType);
+    }
+
+    @PutMapping("/{id}")
+    public UserType updateUserType(@PathVariable int id, @RequestBody UserType userType) {
+        userType.setId(id);
+        return userTypeRepository.save(userType);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUserTypeById(@PathVariable Long id) {
-        userTypeRepository.deleteById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public void deleteUserType(@PathVariable int id) {
+        userTypeRepository.deleteById((long) id);
     }
 }

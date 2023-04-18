@@ -1,7 +1,5 @@
 package com.example.demo.persistence.entity;
-
 import javax.persistence.*;
-
 
 @Entity
 @Table(name = "user_type")
@@ -9,51 +7,33 @@ public class UserType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
-    @Column(name = "user_id")
-    private Long userId;
+    private int id;
 
     @Column(name = "type")
     private String type;
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
+    // default constructor
     public UserType() {}
 
-    public UserType(Long userId, String type) {
-        this.userId = userId;
+    // constructor with parameters
+    public UserType(String type) {
         this.type = type;
     }
 
-    public Long getId() {
+    // getters and setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public String getType() {
+        return type;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setType(String type) {
+        this.type = type;
     }
-
-
-    @Override
-    public String toString() {
-        return "UserType{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", type=" + type +
-                '}';
-    }
-
 }
-

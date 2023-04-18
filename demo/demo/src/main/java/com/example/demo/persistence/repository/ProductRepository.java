@@ -12,5 +12,4 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     List<Product> findAll();
 
-    <T> Optional<T> findAll(List<Product> allProducts);
 }

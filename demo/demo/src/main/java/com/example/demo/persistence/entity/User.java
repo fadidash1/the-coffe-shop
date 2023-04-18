@@ -1,5 +1,4 @@
 package com.example.demo.persistence.entity;
-
 import javax.persistence.*;
 
 @Entity
@@ -8,37 +7,41 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
-    @Column(name = "fname", nullable = false)
+    @Column(name = "fname")
     private String firstName;
 
-    @Column(name = "lname", nullable = false)
+    @Column(name = "lname")
     private String lastName;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
 
+    @Column(name = "user_type")
+    private int userType;
+
+    // default constructor
     public User() {}
 
-    public User(String firstName, String lastName, String email, String password) {
+    // constructor with parameters
+    public User(String firstName, String lastName, String email, String password, int userType) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.userType = userType;
     }
 
-    // Getters and setters
-
-    public Long getId() {
+    // getters and setters
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -72,5 +75,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getUserType() {
+        return userType;
+    }
+
+    public void setUserType(int userType) {
+        this.userType = userType;
     }
 }

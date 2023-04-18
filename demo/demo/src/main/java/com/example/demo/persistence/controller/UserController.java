@@ -1,5 +1,6 @@
 package com.example.demo.persistence.controller;
 
+
 import com.example.demo.persistence.entity.User;
 import com.example.demo.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,29 +15,29 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("")
+    @GetMapping("/")
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") long id) {
+    public User getUserById(@PathVariable int id) {
         return userRepository.findById(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/")
     public User createUser(@RequestBody User user) {
         return userRepository.save(user);
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable("id") long id, @RequestBody User user) {
+    public User updateUser(@PathVariable int id, @RequestBody User user) {
         user.setId(id);
         return userRepository.save(user);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable("id") long id) {
+    public void deleteUser(@PathVariable int id) {
         userRepository.deleteById(id);
     }
 }
