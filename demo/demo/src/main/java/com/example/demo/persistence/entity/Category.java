@@ -9,27 +9,27 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     @Column(name = "idproduct", nullable = false)
-    private Long productId;
+    private int productId;
 
     public Category() {
     }
 
-    public Category(String name, Long productId) {
+    public Category(String name, Integer productId) {
         this.name = name;
         this.productId = productId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -41,11 +41,11 @@ public class Category {
         this.name = name;
     }
 
-    public Long getProductId() {
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 }

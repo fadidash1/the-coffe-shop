@@ -7,6 +7,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int id;
 
     @Column(name = "fname")
@@ -24,10 +25,8 @@ public class User {
     @Column(name = "user_type")
     private int userType;
 
-    // default constructor
     public User() {}
 
-    // constructor with parameters
     public User(String firstName, String lastName, String email, String password, int userType) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +35,6 @@ public class User {
         this.userType = userType;
     }
 
-    // getters and setters
     public int getId() {
         return id;
     }
