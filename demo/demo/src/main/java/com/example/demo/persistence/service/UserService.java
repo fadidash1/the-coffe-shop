@@ -23,7 +23,7 @@ private UserRepository userRepository;
         return userRepository.findById();
     }
 
-    public User deleteById(int id) {
+    public User deleteById(int id){
         return userRepository.deleteById();
     }
 }
