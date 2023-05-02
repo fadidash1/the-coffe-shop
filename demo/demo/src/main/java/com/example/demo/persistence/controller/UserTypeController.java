@@ -35,8 +35,8 @@ public class UserTypeController {
         return userTypeRepository.save(userType);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteUserType(@PathVariable int id) {
-        userTypeRepository.deleteById((long) id);
-    }
+//    @DeleteMapping("/{id}")
+//    public void deleteUserType(@PathVariable int id) {
+//        userTypeRepository.deleteById((long) id);
+//    }
 }
