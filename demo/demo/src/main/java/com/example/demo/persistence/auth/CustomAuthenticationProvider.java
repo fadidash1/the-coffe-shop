@@ -1,3 +1,4 @@
+/*
 package com.example.demo.persistence.auth;
 
 import java.util.ArrayList;
@@ -36,3 +37,4 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         return username.equals("valid_user") && password.equals("valid_password");
     }
 }
+*/

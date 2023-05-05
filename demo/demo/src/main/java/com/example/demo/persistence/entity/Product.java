@@ -18,6 +18,14 @@ public class Product {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    public String getItem_code() {
+        return item_code;
+    }
+
+    public void setItem_code(String item_code) {
+        this.item_code = item_code;
+    }
+
     @Column(name = "item_code",  nullable = false , unique = true)
     private String item_code;
     @Column(name = "price", nullable = false)
@@ -80,6 +88,6 @@ public class Product {
     @Override
     public String toString() {
         return "Product [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price
-                + ", category=" + category + "]";
+                + ", category=" + category + ", item_code" + "]";
     }
 }

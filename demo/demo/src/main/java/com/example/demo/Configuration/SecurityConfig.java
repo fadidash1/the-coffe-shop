@@ -1,4 +1,4 @@
-package com.example.demo.Configuration;
+/* package com.example.demo.Configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -33,4 +33,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .inMemoryAuthentication()
                 .withUser("user").password("{noop}password").roles("USER");
     }
-}
+}*/
