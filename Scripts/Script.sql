@@ -32,9 +32,12 @@ CREATE TABLE if not exists product (
   description TEXT,
   price DECIMAL(10, 2) NOT NULL,
   idcategory INT,
+  item_code VARCHAR(50),
   PRIMARY KEY (id),
-  FOREIGN KEY (idcategory) REFERENCES category(id)
+  FOREIGN KEY (idcategory) REFERENCES category(id),
+  unique (item_code)
 );
+
 
 CREATE TABLE if not exists cart (
   id INT NOT NULL AUTO_INCREMENT,

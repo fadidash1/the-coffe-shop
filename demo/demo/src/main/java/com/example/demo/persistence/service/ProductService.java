@@ -2,9 +2,7 @@ package com.example.demo.persistence.service;
 
 
 import com.example.demo.persistence.entity.Product;
-import com.example.demo.persistence.entity.User;
 import com.example.demo.persistence.repository.ProductRepository;
-import com.example.demo.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +26,6 @@ public class ProductService {
     }
 
     public void deleteById(Long id) {
-        productRepository.deleteById();
+        productRepository.deleteById(id);
     }
 }

@@ -18,6 +18,8 @@ public class Product {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "item_code",  nullable = false , unique = true)
+    private String item_code;
     @Column(name = "price", nullable = false)
     private BigDecimal price;
 
@@ -32,6 +34,7 @@ public class Product {
         this.description = description;
         this.price = price;
         this.category = category;
+        this.item_code = item_code;
     }
 
     public int getId() {

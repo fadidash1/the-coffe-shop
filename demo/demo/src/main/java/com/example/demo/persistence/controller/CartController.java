@@ -1,39 +1,37 @@
 package com.example.demo.persistence.controller;
 
 import com.example.demo.persistence.entity.Cart;
-import com.example.demo.persistence.repository.CartRepository;
+import com.example.demo.persistence.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 @RestController
-@RequestMapping("/carts")
+@RequestMapping("/api/carts")
 public class CartController {
     @Autowired
-    private CartRepository cartRepository;
+    private CartService cartService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cart> getCartById(@PathVariable("id") Integer id) {
-        Optional<Cart> cart = cartRepository.findById(id);
-        return cart.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    public Optional<Cart> getCartById(@PathVariable Long id) {
+        return cartService.findById(id);
     }
 
-    @PostMapping("")
-    public ResponseEntity<Cart> createCart(@RequestBody Cart cart) {
-        Cart savedCart = cartRepository.save(cart);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedCart);
+    @PostMapping("/")
+    public Cart createCart(@RequestBody Cart cart) {
+        return cartService.save(cart);
+    }
+
+    @PutMapping("/{id}")
+    public Cart updateCart(@PathVariable int id, @RequestBody Cart cart) {
+        cart.setId(id);
+        return cartService.save(cart);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCart(@PathVariable("id") Integer id) {
-        Optional<Cart> cart = cartRepository.findById(id);
-        if (cart.isPresent()) {
-            cartRepository.deleteById(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public void deleteCart(@PathVariable Long id) {
+        cartService.deleteById(id);
     }
+
 }

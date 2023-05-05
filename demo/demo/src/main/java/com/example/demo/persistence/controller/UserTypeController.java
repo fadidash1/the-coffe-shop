@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user-types")
+@RequestMapping("/api/user-types")
 public class UserTypeController {
 
     @Autowired
