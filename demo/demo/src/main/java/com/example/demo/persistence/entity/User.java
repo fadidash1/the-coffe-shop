@@ -8,7 +8,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private long id;
 
     @Column(name = "fname")
     private String firstName;
@@ -36,7 +36,7 @@ public class User {
     }
 
     public int getId() {
-        return id;
+        return (int) id;
     }
 
     public void setId(int id) {
@@ -81,5 +81,10 @@ public class User {
 
     public void setUserType(int userType) {
         this.userType = userType;
+    }
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", fname=" + firstName + ", lname=" + lastName + ", email=" + email
+                + ", password=" + password + ", user-type" + "]";
     }
 }

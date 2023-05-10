@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping
+    @GetMapping("/")
     public List<Product> getAllProducts() {
         return productService.findAll();
     }
@@ -24,6 +24,7 @@ public class ProductController {
     public Optional<Product> getProductById(@PathVariable Long id) {
         return productService.findById(id);
     }
+    @PostMapping("/")
     public Product createProduct(@RequestBody Product product) {
         return productService.save(product);
     }
