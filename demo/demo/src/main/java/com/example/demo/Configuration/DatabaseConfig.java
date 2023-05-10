@@ -16,7 +16,7 @@ public class DatabaseConfig {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/coffee?characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull");
         dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setPassword("0954717224");
 
         return dataSource;
     }
