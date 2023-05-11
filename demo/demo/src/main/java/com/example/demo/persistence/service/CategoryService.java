@@ -1,6 +1,8 @@
 package com.example.demo.persistence.service;
 
 import com.example.demo.persistence.entity.Category;
+import com.example.demo.persistence.exception.CategoryNotFoundException;
+import com.example.demo.persistence.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +15,27 @@ import java.util.Optional;
 public
 class CategoryService {
     @Autowired
-    private CategoryService categoryService;
+    private CategoryRepository categoryRepository;
 
     public Category save(Category category) {
-        return categoryService.save(category);
+        return categoryRepository.save(category);
     }
     public List<Category> findAll(){
-        return categoryService.findAll();
+        return categoryRepository.findAll();
     }
     public Optional<Category> findById(Long id) {
-        return categoryService.findById(id);
+        Optional<Category> optionalCategory = categoryRepository.findById(id);
+        if (!optionalCategory.isPresent()){
+            throw new CategoryNotFoundException("Category not found with id: " + id);
+        }
+        return optionalCategory;
     }
     public void deleteById(Long id){
-        categoryService.deleteById(id);
+        Optional<Category> optionalCategory = categoryRepository.findById(id);
+        if (!optionalCategory.isPresent()){
+            throw new CategoryNotFoundException("Category not found with id: " + id);
+        }
+        categoryRepository.deleteById(id);
     }
 
 }
